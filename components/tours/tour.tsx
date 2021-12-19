@@ -11,16 +11,14 @@ export interface TourProps {
 
 export function Tour(porps: TourProps) {
 	return (
-		<div className="main-tour">
+		<div className={porps.tour.class}>
 			<img src="img/tour.jpg" alt="" className="main-tour__img" />
 			<div className="main-tour__text">
-				<h3 className="main-tour__text-name">Название</h3>
-				<p className="main-tour__text-about">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-					pretium
-					orci at rutrum pellentesque.
+				<h3 className="main-tour__text-name">{porps.tour.title}</h3>
+				<p className="main-tour__text-about">{porps.tour.description}
 				</p>
 				<p className="main-tour__text-price">
-					От <b>10000</b> руб.
+					От <b>{porps.tour.price}</b> руб.
 				</p>
 				<button className="but-buy">
 					<p className="but-buy_text">Купить</p>

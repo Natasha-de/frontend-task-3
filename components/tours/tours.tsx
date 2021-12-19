@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { Tour, TourBlock } from "./tour"
 
 const ourTours: TourBlock[] = [
@@ -40,6 +41,16 @@ const ourTours: TourBlock[] = [
 ]
 
 export function Tours() {
+	let MoreTours
+	const [buttonName, setButtonName] = useState("Больше")
+	const ClickMoreTours = () => {
+		document.querySelector('.main')?.classList.toggle('main--all-hidden-visible');
+		if (buttonName == "Больше") {
+			setButtonName("Меньше")
+		} else {
+			setButtonName("Больше")
+		}
+	}
 	return (
 		<section className="section-tour" id="section-tour">
 			<div className="container">
@@ -51,7 +62,7 @@ export function Tours() {
 						)
 					}
 					<div className="more">
-						<button type="button" className="more__btn">Больше туров</button>
+						<button type="button" className="more__btn" onClick={ClickMoreTours}>{buttonName} туров</button>
 					</div>
 				</div>
 			</div>

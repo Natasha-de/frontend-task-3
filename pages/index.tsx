@@ -17,14 +17,12 @@ const Home: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Title</title>
       </Head>
-      <body className="body">
-        <Header />
-        <Welcome />
-        <Sightseens />
-        <Tours />
-        <Contacts />
-        <Footer />
-      </body>
+      <Header />
+      <Welcome />
+      <Sightseens />
+      <Tours />
+      <Contacts />
+      <Footer />
 
     </div>
   )

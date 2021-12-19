@@ -558,8 +558,8 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 3;
-    -webkit-transition: all 0.8s ease 0s;
-    transition: all 0.8s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
   }
   .header__menu.active {
     top: 0;
@@ -588,6 +588,7 @@
   }
   .header__burger.active {
     top: 90vh;
+    transform: all 0.3s ease 0s;
   }
   .header__burger.active span {
     -webkit-transform: scale(0);
@@ -616,7 +617,7 @@ header.scroll {
           box-sizing: inherit;
 }
 
-.body, html {
+body, html {
   margin: 0;
   overflow: auto;
   min-width: 320px;
