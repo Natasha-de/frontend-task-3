@@ -41,21 +41,22 @@ const ourTours: TourBlock[] = [
 ]
 
 export function Tours() {
-	let MoreTours
 	const [buttonName, setButtonName] = useState("Больше")
+	const [clickButtonMoreTours, setclickButtonMoreTours] = useState(false)
 	const ClickMoreTours = () => {
-		document.querySelector('.main')?.classList.toggle('main--all-hidden-visible');
 		if (buttonName == "Больше") {
 			setButtonName("Меньше")
+			setclickButtonMoreTours(!clickButtonMoreTours)
 		} else {
 			setButtonName("Больше")
+			setclickButtonMoreTours(!clickButtonMoreTours)
 		}
 	}
 	return (
 		<section className="section-tour" id="section-tour">
 			<div className="container">
 				<h2 className="main-title">Туры</h2>
-				<div className="main">
+				<div className={`main${clickButtonMoreTours ? ' main--all-hidden-visible' : ''}`}>
 					{
 						ourTours.map((item: TourBlock, index: number) =>
 							<Tour tour={item} key={`tours_${index}`} />

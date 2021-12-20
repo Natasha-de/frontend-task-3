@@ -1,8 +1,10 @@
 import Link from "next/link"
 
-export function Navigation() {
+export interface MenuVisible { isMenuVisible: boolean }
+
+export function Navigation(props: MenuVisible) {
 	return (
-		<nav className="header__menu" id='head-menu'>
+		<nav className={`header__menu${props.isMenuVisible ? ' active' : ''}`} id='head-menu'>
 			<ul className="header__list">
 				<li className="header__list-element">
 					<Link href="#section-welcome" >

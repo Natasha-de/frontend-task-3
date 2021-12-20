@@ -8,16 +8,6 @@ export function Header() {
 
 	function onMenuClick() {
 		setMenuVisible(!isMenuVisible);
-		console.log(isMenuVisible)
-		if (!isMenuVisible) {
-			console.log(document.querySelector('header__menu'))
-			document.querySelector('.header__burger')?.classList.add('active');
-			document.querySelector('.header__menu')?.classList.add('active');
-		} else {
-			console.log(document.querySelector('header__menu'))
-			document.querySelector('.header__burger')?.classList.remove('active');
-			document.querySelector('.header__menu')?.classList.remove('active');
-		}
 	}
 
 	const handlePageScroll = () => {
@@ -44,7 +34,7 @@ export function Header() {
 					<button className={`header__burger${isMenuVisible ? ' active' : ''}`} type="button" id='btn-menu' onClick={onMenuClick}>
 						<span></span>
 					</button>
-					<Navigation />
+					<Navigation isMenuVisible={isMenuVisible} />
 				</div>
 			</div>
 		</header>)
